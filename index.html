@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#087c71">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://js.puter.com/v2/"></script>
+  <script src="script.js" defer></script>
+  <title>Gasto na Foto</title>
+</head>
+<body>
+  <header class="cabecalho">
+    <span class="marca">CONTROLE DE GASTOS</span>
+    <h1>Gasto na Foto</h1>
+    <p>Fotografe o comprovante. A IA anota para você.</p>
+  </header>
+
+  <main>
+    <section class="caixa-total" aria-labelledby="titulo-total">
+      <p id="titulo-total">Total gasto</p>
+      <h2 class="total-gasto" id="total-gasto">R$ 0,00</h2>
+      <span class="periodo">Comprovantes desta sessão</span>
+    </section>
+
+    <label class="envio-foto" for="foto">
+      <span class="icone-recibo" aria-hidden="true">Comprovante</span>
+      <span class="texto-envio">Toque para fotografar o comprovante</span>
+      <span class="ajuda-envio">Use a câmera ou selecione uma imagem</span>
+      <input id="foto" class="foto" type="file" accept="image/*" capture="environment">
+    </label>
+
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+    <section class="rascunho" id="rascunho" aria-labelledby="titulo-rascunho" hidden>
+      <h2 id="titulo-rascunho">Confira antes de salvar</h2>
+      <p class="itens" id="itens-rascunho"></p>
+      <label class="campo-total" for="total-confirmado">
+        Valor total
+        <input id="total-confirmado" type="text" inputmode="decimal" autocomplete="off" placeholder="Ex.: 259,00">
+      </label>
+      <div class="acoes-rascunho">
+        <button class="botao-secundario" id="cancelar-rascunho" type="button">Cancelar</button>
+        <button class="botao-salvar" id="salvar-gasto" type="button">Salvar gasto</button>
+      </div>
+    </section>
+    <section class="lista" id="lista" aria-label="Comprovantes analisados"></section>
+
+    <section class="explicacao" aria-labelledby="como-funciona">
+      <h2 id="como-funciona">Como funciona</h2>
+      <ol>
+        <li>Fotografe ou escolha a imagem de um comprovante.</li>
+        <li>A IA identifica os itens e o valor total.</li>
+        <li>Seu gasto fica registrado nesta sessão.</li>
+      </ol>
+      <p class="aviso">Confira os valores antes de usar a informação.</p>
+    </section>
+  </main>
+
+  <button class="botao-flutuante" id="abrir-ajuda" type="button">Como usar?</button>
+
+  <dialog class="modal-ajuda" id="modal-ajuda" aria-labelledby="titulo-ajuda">
+    <button class="fechar-ajuda" id="fechar-ajuda" type="button" aria-label="Fechar ajuda">×</button>
+    <h2 id="titulo-ajuda">Como registrar um gasto</h2>
+    <p>Envie uma foto nítida do comprovante para a IA ler seus dados.</p>
+    <ol>
+      <li>Toque na área de envio.</li>
+      <li>Fotografe o comprovante ou escolha uma imagem.</li>
+      <li>Aguarde a análise e confira o resultado.</li>
+    </ol>
+    <button class="botao-entendi" id="entendi" type="button">Entendi</button>
+  </dialog>
+</body>
+</html>

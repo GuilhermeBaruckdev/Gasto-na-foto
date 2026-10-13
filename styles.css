@@ -1,0 +1,84 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { background: #ffffff; }
+
+body {
+  background: #ffffff;
+  color: #1d2d3f;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0 auto;
+  max-width: 568px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 32px 24px 48px;
+  position: relative;
+}
+
+.cabecalho { margin-bottom: 28px; }
+.marca { color: #087c71; display: block; font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+h1 { font-size: 28px; line-height: 1.2; margin-bottom: 10px; }
+.cabecalho p, .ajuda-envio, .status { color: #6b7a94; font-size: 14px; line-height: 1.5; }
+
+.caixa-total {
+  background: linear-gradient(135deg, #087c71, #06524b);
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 14px;
+  box-shadow: 0 14px 30px rgba(6, 82, 75, .2);
+  color: #fff;
+  margin-bottom: 16px;
+  padding: 24px;
+}
+
+.caixa-total p { font-size: 14px; font-weight: 600; opacity: .85; }
+.total-gasto { font-size: 40px; line-height: 1.1; margin: 8px 0; }
+.periodo { color: #c5e6e0; font-size: 13px; }
+
+.envio-foto {
+  align-items: center;
+  background: #fff;
+  border: 2px dashed #aebfd0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 26px 20px;
+  text-align: center;
+  transition: background-color .2s, border-color .2s, transform .2s;
+}
+
+.envio-foto:hover, .envio-foto:focus-within { background: #f5fbfa; border-color: #087c71; transform: translateY(-2px); }
+.icone-recibo { color: #087c71; font-size: 13px; font-weight: 700; text-transform: uppercase; }
+.texto-envio { font-weight: 700; }
+input[type="file"] { display: none; }
+
+.status { margin: 12px 0; min-height: 21px; text-align: center; }
+.status.erro { color: #b42318; }
+
+.comprovante { background: #fff; border: 1px solid #e0e7ef; border-radius: 8px; margin-bottom: 12px; padding: 16px; }
+.itens { color: #4a5b78; font-size: 15px; line-height: 1.8; white-space: pre-line; }
+.total-nota { border-top: 1px dashed #d6dee9; color: #6b7a94; display: flex; font-size: 15px; justify-content: space-between; margin-top: 12px; padding-top: 12px; }
+
+.explicacao { border: 1px solid #b9d8d4; border-left: 4px solid #087c71; border-radius: 10px; box-shadow: 0 4px 12px rgba(29, 45, 63, .06); color: #4a5b78; font-size: 14px; line-height: 1.55; margin-top: 28px; padding: 20px; }
+.explicacao h2 { color: #1d2d3f; font-size: 17px; margin-bottom: 10px; }
+.explicacao ol { margin: 12px 0 12px 20px; }
+.explicacao li + li { margin-top: 6px; }
+.aviso { color: #087c71; font-weight: 600; }
+
+.botao-flutuante { background: #087c71; border: 0; border-radius: 999px; bottom: 30px; box-shadow: 0 4px 14px rgba(6, 82, 75, .28); color: #fff; cursor: pointer; font: inherit; font-size: 14px; font-weight: 700; padding: 13px 18px; position: fixed; right: 24px; }
+.botao-flutuante:hover, .botao-flutuante:focus-visible { background: #06524b; outline: none; }
+
+.modal-ajuda { border: 0; border-radius: 12px; color: #1d2d3f; font-family: inherit; line-height: 1.55; max-width: 480px; padding: 30px; width: calc(100% - 32px); }
+.modal-ajuda::backdrop { background: rgba(18, 35, 51, .55); }
+.modal-ajuda h2 { font-size: 22px; margin-bottom: 12px; }
+.modal-ajuda p, .modal-ajuda ol { color: #4a5b78; font-size: 14px; }
+.modal-ajuda ol { margin: 16px 0 16px 20px; }
+.modal-ajuda li + li { margin-top: 10px; }
+.fechar-ajuda { background: transparent; border: 0; color: #4a5b78; cursor: pointer; font-size: 28px; line-height: 1; position: absolute; right: 14px; top: 12px; }
+.botao-entendi { background: #087c71; border: 0; border-radius: 6px; color: #fff; cursor: pointer; font: inherit; font-weight: 700; margin-top: 20px; padding: 11px 18px; }
+
+@media (max-width: 420px) {
+  body { padding: 24px 16px 40px; }
+  h1 { font-size: 25px; }
+  .botao-flutuante { bottom: 16px; right: 16px; }
+}
